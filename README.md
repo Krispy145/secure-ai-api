@@ -109,14 +109,14 @@ pytest tests/ --cov=app --cov-report=html
 
 ## 🗓 Roadmap
 
-| Milestone                    | Target Date | Status     |
-| ---------------------------- | ----------- | ---------- |
-| Scaffold repo                | 12/10/2025  | ✅ Done    |
-| Stub endpoints               | 15/10/2025  | ⏳ Pending |
-| Phishing classifier integration | 20/10/2025 | ⏳ Planned |
-| RAG endpoint implementation  | 24/10/2025  | ⏳ Planned |
-| Docker + CI/CD setup         | 28/10/2025  | ⏳ Planned |
-| JWT auth + rate limiting     | 04/11/2025  | ⏳ Planned |
+| Milestone                    | Category          | Target Date | Status     |
+| ---------------------------- | ----------------- | ----------- | ---------- |
+| Scaffold repo                | Backend Development | 12/10/2025  | ✅ Done    |
+| Stub endpoints               | Backend Development | 15/10/2025  | ⏳ Pending |
+| Phishing classifier integration | Backend Development | 20/10/2025 | ⏳ Planned |
+| RAG endpoint implementation  | Backend Development | 24/10/2025  | ⏳ Planned |
+| Docker + CI/CD setup         | Backend Development | 28/10/2025  | ⏳ Planned |
+| JWT auth + rate limiting     | Backend Development | 04/11/2025  | ⏳ Planned |
 
 ---
 
