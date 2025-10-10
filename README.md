@@ -1,9 +1,6 @@
 # Secure AI API
 
-Minimal FastAPI service exposing AI endpoints securely:
-- `/v1/predict/phishing` — serves the Phishing Classifier model
-- `/v1/rag/query` — wraps the AI Chat RAG pipeline
-- `/health` — basic health check
+FastAPI service for RAG + inference with OAuth2/JWT, rate limiting, Docker, CI/CD.
 
 **Status:** scaffolded (stub version)  
 **Milestones:**  
