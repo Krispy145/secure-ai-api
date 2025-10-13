@@ -8,7 +8,7 @@ FastAPI service for RAG + inference with OAuth2/JWT, rate limiting, Docker, CI/C
 
 - **Status:** active (Active)
 - **Focus:** FastAPI service for RAG + inference with OAuth2/JWT, rate limiting, Docker, CI/CD.
-- **Last updated:** 11/10/2025
+- **Last updated:** 13/10/2025
 - **Target completion:** 28/10/2025
 
 ---
