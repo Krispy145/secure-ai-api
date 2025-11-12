@@ -1,5 +1,9 @@
 import os
-from pydantic import BaseSettings
+try:
+    from pydantic_settings import BaseSettings
+except ImportError:
+    # Fallback for older pydantic versions
+    from pydantic import BaseSettings
 
 class Settings(BaseSettings):
     PROJECT_NAME: str = "Secure AI API"
@@ -7,5 +11,9 @@ class Settings(BaseSettings):
     API_V1_STR: str = "/v1"
     SECRET_KEY: str = os.getenv("SECRET_KEY", "supersecret")
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60
+    
+    class Config:
+        env_file = ".env"
+        case_sensitive = True
 
 settings = Settings()
