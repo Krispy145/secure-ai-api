@@ -2,8 +2,39 @@ version: '3.8'
 
 services:
   secure-ai-api:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: secure-ai-api
     ports:
-      - "8000:8000"
-    env_file: .env
+      - "${PORT:-8000}:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PORT=8000
+      # Optional: Add OpenAI API key for RAG LLM generation
+      # - OPENAI_API_KEY=${OPENAI_API_KEY}
+      # Optional: Add secret key for JWT (when implemented)
+      # - SECRET_KEY=${SECRET_KEY}
+    # Optional: Uncomment to use .env file
+    # env_file:
+    #   - .env
+    volumes:
+      # Persist model files
+      - ./app/models:/app/app/models:ro
+      # Persist ChromaDB data
+      - ./app/data/chroma:/app/app/data/chroma
+      # Mount code for development (comment out for production)
+      # - ./app:/app/app
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import requests; requests.get('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    networks:
+      - secure-ai-network
+
+networks:
+  secure-ai-network:
+    driver: bridge

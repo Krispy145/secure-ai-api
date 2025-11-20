@@ -1,0 +1,74 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+test_results/
+*.cover
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Documentation
+*.md
+docs/
+README.md
+
+# CI/CD
+.github/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Data (don't copy large data files)
+data/raw/
+data/interim/
+*.csv
+*.json
+!app/models/*.joblib
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# ChromaDB data (will be created at runtime)
+app/data/chroma/*
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
