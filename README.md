@@ -103,7 +103,7 @@ pytest tests/ --cov=app --cov-report=html
 | ---------------------------- | --------------------- | ----------- | ---------- |
 | Stub endpoints | Backend Development | 26/10/2025 | ✅ Done |
 | Phishing classifier integration | Backend Development | 30/11/2025 | ✅ Done |
-| RAG endpoint implementation | Backend Development | 30/11/2025 | ⏳ In Progress |
+| RAG endpoint implementation | Backend Development | 30/11/2025 | ✅ Done |
 | Docker + CI/CD setup | Backend Development | 30/11/2025 | ⏳ In Progress |
 | JWT auth + rate limiting | Backend Development | 06/12/2025 | ⏳ In Progress |
 
