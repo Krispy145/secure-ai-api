@@ -8,8 +8,8 @@ FastAPI service for RAG + inference with OAuth2/JWT, rate limiting, Docker, CI/C
 
 - **Status:** active (Active)
 - **Focus:** FastAPI service for RAG + inference with OAuth2/JWT, rate limiting, Docker, CI/CD.
-- **Last updated:** 12/11/2025
-- **Target completion:** 19/11/2025
+- **Last updated:** 20/11/2025
+- **Target completion:** 23/11/2025
 
 ---
 
@@ -102,10 +102,10 @@ pytest tests/ --cov=app --cov-report=html
 | Milestone                    | Category              | Target Date | Status     |
 | ---------------------------- | --------------------- | ----------- | ---------- |
 | Stub endpoints | Backend Development | 26/10/2025 | ✅ Done |
-| Phishing classifier integration | Backend Development | 18/11/2025 | ⏳ In Progress |
-| RAG endpoint implementation | Backend Development | 22/11/2025 | ⏳ In Progress |
-| Docker + CI/CD setup | Backend Development | 26/11/2025 | ⏳ In Progress |
-| JWT auth + rate limiting | Backend Development | 02/12/2025 | ⏳ In Progress |
+| Phishing classifier integration | Backend Development | 30/11/2025 | ⏳ In Progress |
+| RAG endpoint implementation | Backend Development | 30/11/2025 | ⏳ In Progress |
+| Docker + CI/CD setup | Backend Development | 30/11/2025 | ⏳ In Progress |
+| JWT auth + rate limiting | Backend Development | 06/12/2025 | ⏳ In Progress |
 
 
 ---
