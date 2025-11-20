@@ -54,13 +54,6 @@ app/
 
 ## 🚀 Getting Started
 
-### Prerequisites
-- Python 3.11+ (for local development)
-- Docker and Docker Compose (for containerized deployment)
-- Model file: `app/models/model.joblib` (from phishing-classifier)
-
-### Local Development
-
 ```bash
 git clone https://github.com/Krispy145/secure-ai-api.git
 cd secure-ai-api
@@ -72,35 +65,9 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
-### Docker Deployment
-
-**Build and run with Docker Compose:**
+**Run with Docker:**
 ```bash
-# Build and start the service
 docker-compose up --build
-
-# Run in detached mode
-docker-compose up -d
-
-# View logs
-docker-compose logs -f
-
-# Stop the service
-docker-compose down
-```
-
-**Build Docker image manually:**
-```bash
-docker build -t secure-ai-api:latest .
-docker run -p 8000:8000 secure-ai-api:latest
-```
-
-**Environment Variables:**
-Create a `.env` file (optional) with:
-```env
-PORT=8000
-OPENAI_API_KEY=your-key-here  # Optional, for RAG LLM generation
-SECRET_KEY=your-secret-key    # Optional, for future JWT auth
 ```
 
 **API Documentation:**
@@ -110,23 +77,9 @@ Visit `http://localhost:8000/docs` for interactive API documentation.
 
 ## 🧪 Testing
 
-**Run tests locally:**
 ```bash
 pytest tests/ --cov=app --cov-report=html
 ```
-
-**Run tests in Docker:**
-```bash
-docker-compose run secure-ai-api pytest tests/ -v
-```
-
-**CI/CD:**
-The GitHub Actions workflow automatically runs:
-- Code linting and formatting checks
-- Unit and integration tests
-- Docker image build and validation
-- Security vulnerability scanning
-- Automated deployment (on main branch)
 
 - Unit tests → API endpoints and business logic
 - Integration tests → Database and external service interactions
@@ -151,7 +104,7 @@ The GitHub Actions workflow automatically runs:
 | Stub endpoints | Backend Development | 26/10/2025 | ✅ Done |
 | Phishing classifier integration | Backend Development | 30/11/2025 | ✅ Done |
 | RAG endpoint implementation | Backend Development | 30/11/2025 | ✅ Done |
-| Docker + CI/CD setup | Backend Development | 30/11/2025 | ⏳ In Progress |
+| Docker + CI/CD setup | Backend Development | 30/11/2025 | ✅ Done |
 | JWT auth + rate limiting | Backend Development | 06/12/2025 | ⏳ In Progress |
 
 
