@@ -5,3 +5,6 @@ joblib
 python-multipart
 requests
 pytest
+pandas
+numpy
+scikit-learn

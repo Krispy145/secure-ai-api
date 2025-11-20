@@ -2,6 +2,10 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.api.v1 import router as api_router
 from app.core.config import settings
+from app.services.phishing_classifier import initialize_classifier_service
+import logging
+
+logger = logging.getLogger(__name__)
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
@@ -10,6 +14,16 @@ app = FastAPI(
     docs_url="/docs",
     redoc_url="/redoc"
 )
+
+@app.on_event("startup")
+async def startup_event():
+    """Initialize services on application startup."""
+    logger.info("Initializing application services...")
+    model_loaded = initialize_classifier_service()
+    if model_loaded:
+        logger.info("Phishing classifier model loaded successfully")
+    else:
+        logger.warning("Failed to load phishing classifier model - stub mode will be used")
 
 # CORS middleware for frontend integration
 app.add_middleware(
