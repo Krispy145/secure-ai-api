@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.api.v1 import router as api_router
 from app.core.config import settings
 from app.services.phishing_classifier import initialize_classifier_service
+from app.services.rag_service import initialize_rag_service
 import logging
 
 logger = logging.getLogger(__name__)
@@ -19,11 +20,20 @@ app = FastAPI(
 async def startup_event():
     """Initialize services on application startup."""
     logger.info("Initializing application services...")
+    
+    # Initialize phishing classifier
     model_loaded = initialize_classifier_service()
     if model_loaded:
         logger.info("Phishing classifier model loaded successfully")
     else:
         logger.warning("Failed to load phishing classifier model - stub mode will be used")
+    
+    # Initialize RAG service
+    rag_initialized = initialize_rag_service()
+    if rag_initialized:
+        logger.info("RAG service initialized successfully")
+    else:
+        logger.warning("RAG service initialization failed - fallback mode will be used")
 
 # CORS middleware for frontend integration
 app.add_middleware(
@@ -47,6 +57,8 @@ def ping():
 # Include API v1 router
 app.include_router(api_router, prefix="/v1")
 
-# Add direct phishing routes for convenience (without /v1 prefix)
+# Add direct routes for convenience (without /v1 prefix)
 from app.api.v1 import phishing as phishing_module
+from app.api.v1 import rag as rag_module
 app.include_router(phishing_module.router, prefix="/phishing", tags=["phishing"])
+app.include_router(rag_module.router, prefix="/rag", tags=["rag"])

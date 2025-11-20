@@ -8,3 +8,8 @@ pytest
 pandas
 numpy
 scikit-learn
+# RAG dependencies (optional but recommended)
+chromadb>=0.4.0
+sentence-transformers>=2.2.0
+# OpenAI for LLM generation (optional)
+openai>=1.0.0
