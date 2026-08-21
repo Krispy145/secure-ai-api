@@ -11,10 +11,13 @@ services:
     environment:
       - PYTHONUNBUFFERED=1
       - PORT=8000
+      - SECRET_KEY=${SECRET_KEY:-changeme-set-a-real-secret}
+      - DEMO_USERNAME=${DEMO_USERNAME:-demo}
+      - DEMO_PASSWORD=${DEMO_PASSWORD:-changeme}
+      - RATE_LIMIT_ENABLED=${RATE_LIMIT_ENABLED:-true}
+      - CORS_ORIGINS=${CORS_ORIGINS:-http://localhost:5173,http://localhost:3000}
       # Optional: Add OpenAI API key for RAG LLM generation
       # - OPENAI_API_KEY=${OPENAI_API_KEY}
-      # Optional: Add secret key for JWT (when implemented)
-      # - SECRET_KEY=${SECRET_KEY}
     # Optional: Uncomment to use .env file
     # env_file:
     #   - .env

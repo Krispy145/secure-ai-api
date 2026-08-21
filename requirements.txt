@@ -1,6 +1,7 @@
 fastapi
 uvicorn
 pydantic
+pydantic-settings
 joblib
 python-multipart
 requests
@@ -8,6 +9,9 @@ pytest
 pandas
 numpy
 scikit-learn
+PyJWT
+bcrypt
+slowapi
 # RAG dependencies (optional but recommended)
 chromadb>=0.4.0
 sentence-transformers>=2.2.0
