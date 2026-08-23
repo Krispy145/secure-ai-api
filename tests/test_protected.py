@@ -45,3 +45,15 @@ def test_rag_query_with_token(client, auth_headers):
     assert body["query"] == "What is rate limiting?"
     assert isinstance(body["response"], str)
     assert body["response"]
+
+
+def test_rag_query_returns_sample_phishing_context(client, auth_headers):
+    response = client.post(
+        "/v1/rag/query",
+        headers=auth_headers,
+        json={"query": "what is phishing?"},
+    )
+    assert response.status_code == 200
+    body = response.json()
+    assert "phishing" in body["response"].lower()
+    assert "configure document ingestion" not in body["response"].lower()
