@@ -107,6 +107,7 @@ pytest tests/ --cov=app --cov-report=html
 | Docker + CI/CD setup | Backend Development | 30/11/2025 | ✅ Done |
 | JWT auth + rate limiting | Backend Development | 16/11/2026 | ✅ Done |
 | Localhost CORS for Expo/Flutter web | Backend Development | 16/11/2026 | ✅ Done |
+| Sample knowledge base for RAG MVP | Backend Development | 16/11/2026 | ✅ Done |
 
 
 ---
