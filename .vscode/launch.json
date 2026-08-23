@@ -1,0 +1,59 @@
+{
+  "configurations": [
+    {
+      "args": [
+        "app.main:app",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8000"
+      ],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder:secure-ai-api}",
+      "envFile": "${workspaceFolder:secure-ai-api}/.env",
+      "justMyCode": true,
+      "module": "uvicorn",
+      "name": "Secure AI API",
+      "request": "launch",
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "Uvicorn running on",
+        "uriFormat": "http://127.0.0.1:8000/docs"
+      },
+      "type": "debugpy"
+    },
+    {
+      "args": [
+        "app.main:app",
+        "--reload",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8000"
+      ],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder:secure-ai-api}",
+      "envFile": "${workspaceFolder:secure-ai-api}/.env",
+      "justMyCode": true,
+      "module": "uvicorn",
+      "name": "Secure AI API (reload)",
+      "request": "launch",
+      "type": "debugpy"
+    },
+    {
+      "args": [
+        "tests/",
+        "-q"
+      ],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder:secure-ai-api}",
+      "envFile": "${workspaceFolder:secure-ai-api}/.env",
+      "justMyCode": true,
+      "module": "pytest",
+      "name": "Pytest",
+      "request": "launch",
+      "type": "debugpy"
+    }
+  ],
+  "version": "0.2.0"
+}
